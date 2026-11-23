@@ -15,16 +15,16 @@ Categories
 Все остальные имеют только GET
 
 Список всех книг
-curl http://localhost:3000/api/books/
+`curl http://localhost:3000/api/books/`
 
 Инфа на конкретную книжку
-curl http://localhost:3000/api/books/1
+`curl http://localhost:3000/api/books/1`
 
 Создание
-curl -X POST http://127.0.0.1:3000/api/books/ --json '{"title": "foo", "author_id": 1, "category_id": 1}'
+`curl -X POST http://127.0.0.1:3000/api/books/ --json '{"title": "foo", "author_id": 1, "category_id": 1}'`
 
 Изменение
-curl -X PATCH http://127.0.0.1:3000/api/books/1 --json '{"title": "bar", "author_id": 1, "category_id": 1}'
+`curl -X PATCH http://127.0.0.1:3000/api/books/1 --json '{"title": "bar", "author_id": 1, "category_id": 1}'`
 
 Удаление
-curl -X DELETE http://127.0.0.1:3000/api/books/1
+`curl -X DELETE http://127.0.0.1:3000/api/books/1`

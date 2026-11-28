@@ -1,5 +1,6 @@
 class Api::AuthorsController < ApplicationController
   before_action :set_author, only: %i[ show ]
+
   def index
     render json: Author.all
   end

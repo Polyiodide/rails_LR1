@@ -9,16 +9,21 @@ class Api::BooksController < ApplicationController
     render json: @book
   end
 
-  def new
-    Book.create(book_params)
+  def create
+    render json: Book.create(book_params)
   end
 
   def update
     @book.update(book_params)
+    render json: @book
   end
 
   def destroy
-    @book.delete
+    if @book.destroy
+      render json: @book, status: 200
+    else
+      render json: @book, status: 400
+    end
   end
 
   private

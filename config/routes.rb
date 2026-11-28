@@ -1,15 +1,9 @@
 Rails.application.routes.draw do
-  get "/api/books", to: "books#index"
-  get "/api/books/:id", to: "books#show"
-  post "/api/books", to: "books#new"
-  patch "/api/books/:id", to: "books#patch"
-  delete "/api/books/:id", to: "books#delete"
-
-  get "/api/authors", to: "authors#index"
-  get "/api/authors/:id", to: "authors#show"
-
-  get "/api/category", to: "category#index"
-  get "/api/category/:id", to: "category#show"
+  namespace :api do
+    resources :books
+    resources :authors, only: [:index, :show]
+    resources :categories, only: [:index, :show]
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
